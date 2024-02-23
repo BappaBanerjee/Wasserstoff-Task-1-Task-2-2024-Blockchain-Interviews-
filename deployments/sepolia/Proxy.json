@@ -1,0 +1,140 @@
+{
+  "address": "0x25a913afafF2BE67258e19c27030D030EFCa0B1d",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "Implementation_NotFound",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Invalid_Contract_Address",
+      "type": "error"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_admin",
+          "type": "address"
+        }
+      ],
+      "name": "changeAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "_functionId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "deleteImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "_functionId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "_functionId",
+          "type": "bytes4"
+        },
+        {
+          "internalType": "address",
+          "name": "_implementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x5090477e603eb41d31da7af2d3101dfddcc49177a7d3a15d3d2f61a6140f8660",
+  "receipt": {
+    "to": null,
+    "from": "0x26cEcCDC5DD2611D3d750903c901408416A73995",
+    "contractAddress": "0x25a913afafF2BE67258e19c27030D030EFCa0B1d",
+    "transactionIndex": 33,
+    "gasUsed": "484961",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x68afc24379f78e8be7e23334e4c6bcb1957256e464cb2feee9a2fe61bd2d55c1",
+    "transactionHash": "0x5090477e603eb41d31da7af2d3101dfddcc49177a7d3a15d3d2f61a6140f8660",
+    "logs": [],
+    "blockNumber": 5349270,
+    "cumulativeGasUsed": "3454657",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "c0157dfaa03f2a12566eede41fcddf10",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"Implementation_NotFound\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Invalid_Contract_Address\",\"type\":\"error\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_admin\",\"type\":\"address\"}],\"name\":\"changeAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"_functionId\",\"type\":\"bytes4\"}],\"name\":\"deleteImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"_functionId\",\"type\":\"bytes4\"}],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"_functionId\",\"type\":\"bytes4\"},{\"internalType\":\"address\",\"name\":\"_implementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Proxy.sol\":\"Proxy\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":666666},\"remappings\":[]},\"sources\":{\"contracts/Proxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.20;\\nimport \\\"./StorageSlot.sol\\\";\\n\\ncontract Proxy{\\n\\n    error Implementation_NotFound();\\n    error Invalid_Contract_Address();\\n\\n    bytes32 private constant ADMIN_SLOT = bytes32(uint256(\\n            keccak256(\\\"eip1967.proxy.admin\\\")) - 1\\n        );\\n\\n    bytes32 private constant IMPLEMENTATION_SLOT = bytes32(uint256(\\n            keccak256(\\\"eip1967.proxy.implementation\\\")) - 1\\n        );\\n\\n    modifier isAdmin() {\\n        if(msg.sender == _getAdmin()){\\n            _;\\n        }else{\\n            _fallback();\\n        }\\n    }\\n\\n    constructor() {\\n        _setAdmin(msg.sender);\\n    }\\n\\n    function _setAdmin(address _addr) private {\\n        StorageSlot.getAddressSlot(ADMIN_SLOT).value[bytes4(keccak256(\\\"admin\\\"))] = _addr;\\n    }\\n\\n    function _getAdmin() private view returns(address) {\\n        return StorageSlot.getAddressSlot(ADMIN_SLOT).value[bytes4(keccak256(\\\"admin\\\"))];\\n    }\\n\\n    function _setImplementation(bytes4 _functionId, address _implementation) private {\\n        if(_implementation == address(0)) revert Invalid_Contract_Address();\\n        StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value[_functionId] = _implementation;\\n    }\\n\\n    function _getImplementation(bytes4 _functionId) private view returns (address) {\\n        return StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value[_functionId];\\n    }\\n\\n    //admin interface\\n\\n    function upgradeTo(bytes4 _functionId, address _implementation) external isAdmin   {\\n        _setImplementation(_functionId, _implementation);\\n    }\\n\\n    function changeAdmin(address _admin) public isAdmin {\\n        _setAdmin(_admin);\\n    }\\n\\n    function admin() external isAdmin returns (address) {\\n        return _getAdmin();\\n    }\\n\\n    function implementation(bytes4 _functionId) external isAdmin returns (address) {\\n        return _getImplementation(_functionId);\\n    }\\n\\n    function deleteImplementation(bytes4 _functionId) public isAdmin{\\n        delete StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value[_functionId];\\n    }\\n\\n    //user Interface\\n    fallback() external payable { \\n        _fallback();\\n    }\\n\\n    receive() external payable { \\n        _fallback();\\n    }\\n\\n    function _fallback() private  {\\n        bytes4 functionId = _getFunctionId(msg.data);\\n        address _implementation = _getImplementation(functionId);\\n        if(_implementation == address(0)) revert Implementation_NotFound();\\n        _delegate(_implementation);\\n    }\\n\\n    function _getFunctionId(bytes memory data) private pure returns (bytes4) {\\n        bytes4 functionId;\\n        assembly {\\n            functionId := mload(add(data, 32))\\n        }\\n        return functionId;\\n    }\\n\\n    function _delegate(address _implementation) internal virtual {\\n        assembly {\\n            \\n            calldatacopy(0, 0, calldatasize())\\n\\n            let result := delegatecall(gas(), _implementation, 0, calldatasize(), 0, 0)\\n            returndatacopy(0, 0, returndatasize())\\n\\n            switch result\\n            // delegatecall returns 0 on error.\\n            case 0 {\\n                revert(0, returndatasize())\\n            }\\n            default {\\n                return(0, returndatasize())\\n            }\\n        }\\n    }\\n}\",\"keccak256\":\"0xa20105c756de3844484f62ea59cbaf59ed4281e7fb97efbbf6b4a047be652a42\",\"license\":\"MIT\"},\"contracts/StorageSlot.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.20;\\n\\nlibrary StorageSlot {\\n    struct AddressSlot {\\n        mapping(bytes4 => address) value;\\n    }\\n\\n    function getAddressSlot(\\n        bytes32 slot\\n    ) internal pure returns (AddressSlot storage r) {\\n        assembly {\\n            r.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x76b5d66f8fae69afa57dfcd09899949259166405fc43cc9d5b51c3db60e2bafd\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061001a3361001f565b6100b0565b8061005161004e60017fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6104610089565b90565b63f23ec0bb60e01b60009081526020919091526040902080546001600160a01b0319166001600160a01b039290921691909117905550565b818103818111156100aa57634e487b7160e01b600052601160045260246000fd5b92915050565b61076d806100bf6000396000f3fe60806040526004361061005e5760003560e01c80638f283970116100435780638f283970146100de578063d6c68069146100fe578063f851a4401461011e5761006d565b80630d7415771461007557806372085031146100be5761006d565b3661006d5761006b610133565b005b61006b610133565b34801561008157600080fd5b50610095610090366004610669565b6101dd565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b3480156100ca57600080fd5b5061006b6100d93660046106af565b61021f565b3480156100ea57600080fd5b5061006b6100f93660046106e2565b610255565b34801561010a57600080fd5b5061006b610119366004610669565b61028d565b34801561012a57600080fd5b5061009561033d565b60006101756000368080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061037892505050565b905060006101828261037f565b905073ffffffffffffffffffffffffffffffffffffffff81166101d0576040517e5b488b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6101d9816103fd565b5050565b60006101e7610421565b73ffffffffffffffffffffffffffffffffffffffff1633036102125761020c8261037f565b92915050565b61021a610133565b919050565b610227610421565b73ffffffffffffffffffffffffffffffffffffffff16330361024d576101d9828261049d565b6101d9610133565b61025d610421565b73ffffffffffffffffffffffffffffffffffffffff1633036102855761028281610594565b50565b610282610133565b610295610421565b73ffffffffffffffffffffffffffffffffffffffff163303610285576102e26102df60017f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbd6106fd565b90565b7fffffffff00000000000000000000000000000000000000000000000000000000821660009081526020919091526040902080547fffffffffffffffffffffffff000000000000000000000000000000000000000016905550565b6000610347610421565b73ffffffffffffffffffffffffffffffffffffffff1633036103705761036b610421565b905090565b6102df610133565b6020015190565b60006103af6102df60017f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbd6106fd565b7fffffffff00000000000000000000000000000000000000000000000000000000909216600090815260209290925250604090205473ffffffffffffffffffffffffffffffffffffffff1690565b3660008037600080366000845af43d6000803e80801561041c573d6000f35b3d6000fd5b60006104516102df60017fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61046106fd565b7ff23ec0bb000000000000000000000000000000000000000000000000000000006000908152602091909152604090205473ffffffffffffffffffffffffffffffffffffffff16919050565b73ffffffffffffffffffffffffffffffffffffffff81166104ea576040517f1e536f7500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b806105196102df60017f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbd6106fd565b7fffffffff00000000000000000000000000000000000000000000000000000000939093166000908152602093909352604090922080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9093169290921790915550565b806105c36102df60017fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61046106fd565b7ff23ec0bb0000000000000000000000000000000000000000000000000000000060009081526020919091526040902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9290921691909117905550565b80357fffffffff000000000000000000000000000000000000000000000000000000008116811461021a57600080fd5b60006020828403121561067b57600080fd5b61068482610639565b9392505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461021a57600080fd5b600080604083850312156106c257600080fd5b6106cb83610639565b91506106d96020840161068b565b90509250929050565b6000602082840312156106f457600080fd5b6106848261068b565b8181038181111561020c577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fdfea2646970667358221220174fb494c4aceacfe4a83523136d1fcb2b6ece946915fe75dad0d4937a79c4d464736f6c63430008140033",
+  "deployedBytecode": "0x60806040526004361061005e5760003560e01c80638f283970116100435780638f283970146100de578063d6c68069146100fe578063f851a4401461011e5761006d565b80630d7415771461007557806372085031146100be5761006d565b3661006d5761006b610133565b005b61006b610133565b34801561008157600080fd5b50610095610090366004610669565b6101dd565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b3480156100ca57600080fd5b5061006b6100d93660046106af565b61021f565b3480156100ea57600080fd5b5061006b6100f93660046106e2565b610255565b34801561010a57600080fd5b5061006b610119366004610669565b61028d565b34801561012a57600080fd5b5061009561033d565b60006101756000368080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525061037892505050565b905060006101828261037f565b905073ffffffffffffffffffffffffffffffffffffffff81166101d0576040517e5b488b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6101d9816103fd565b5050565b60006101e7610421565b73ffffffffffffffffffffffffffffffffffffffff1633036102125761020c8261037f565b92915050565b61021a610133565b919050565b610227610421565b73ffffffffffffffffffffffffffffffffffffffff16330361024d576101d9828261049d565b6101d9610133565b61025d610421565b73ffffffffffffffffffffffffffffffffffffffff1633036102855761028281610594565b50565b610282610133565b610295610421565b73ffffffffffffffffffffffffffffffffffffffff163303610285576102e26102df60017f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbd6106fd565b90565b7fffffffff00000000000000000000000000000000000000000000000000000000821660009081526020919091526040902080547fffffffffffffffffffffffff000000000000000000000000000000000000000016905550565b6000610347610421565b73ffffffffffffffffffffffffffffffffffffffff1633036103705761036b610421565b905090565b6102df610133565b6020015190565b60006103af6102df60017f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbd6106fd565b7fffffffff00000000000000000000000000000000000000000000000000000000909216600090815260209290925250604090205473ffffffffffffffffffffffffffffffffffffffff1690565b3660008037600080366000845af43d6000803e80801561041c573d6000f35b3d6000fd5b60006104516102df60017fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61046106fd565b7ff23ec0bb000000000000000000000000000000000000000000000000000000006000908152602091909152604090205473ffffffffffffffffffffffffffffffffffffffff16919050565b73ffffffffffffffffffffffffffffffffffffffff81166104ea576040517f1e536f7500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b806105196102df60017f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbd6106fd565b7fffffffff00000000000000000000000000000000000000000000000000000000939093166000908152602093909352604090922080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9093169290921790915550565b806105c36102df60017fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61046106fd565b7ff23ec0bb0000000000000000000000000000000000000000000000000000000060009081526020919091526040902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9290921691909117905550565b80357fffffffff000000000000000000000000000000000000000000000000000000008116811461021a57600080fd5b60006020828403121561067b57600080fd5b61068482610639565b9392505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461021a57600080fd5b600080604083850312156106c257600080fd5b6106cb83610639565b91506106d96020840161068b565b90509250929050565b6000602082840312156106f457600080fd5b6106848261068b565b8181038181111561020c577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fdfea2646970667358221220174fb494c4aceacfe4a83523136d1fcb2b6ece946915fe75dad0d4937a79c4d464736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

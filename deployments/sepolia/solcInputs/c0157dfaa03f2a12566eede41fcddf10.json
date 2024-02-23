@@ -1,0 +1,42 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Proxy.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.20;\nimport \"./StorageSlot.sol\";\n\ncontract Proxy{\n\n    error Implementation_NotFound();\n    error Invalid_Contract_Address();\n\n    bytes32 private constant ADMIN_SLOT = bytes32(uint256(\n            keccak256(\"eip1967.proxy.admin\")) - 1\n        );\n\n    bytes32 private constant IMPLEMENTATION_SLOT = bytes32(uint256(\n            keccak256(\"eip1967.proxy.implementation\")) - 1\n        );\n\n    modifier isAdmin() {\n        if(msg.sender == _getAdmin()){\n            _;\n        }else{\n            _fallback();\n        }\n    }\n\n    constructor() {\n        _setAdmin(msg.sender);\n    }\n\n    function _setAdmin(address _addr) private {\n        StorageSlot.getAddressSlot(ADMIN_SLOT).value[bytes4(keccak256(\"admin\"))] = _addr;\n    }\n\n    function _getAdmin() private view returns(address) {\n        return StorageSlot.getAddressSlot(ADMIN_SLOT).value[bytes4(keccak256(\"admin\"))];\n    }\n\n    function _setImplementation(bytes4 _functionId, address _implementation) private {\n        if(_implementation == address(0)) revert Invalid_Contract_Address();\n        StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value[_functionId] = _implementation;\n    }\n\n    function _getImplementation(bytes4 _functionId) private view returns (address) {\n        return StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value[_functionId];\n    }\n\n    //admin interface\n\n    function upgradeTo(bytes4 _functionId, address _implementation) external isAdmin   {\n        _setImplementation(_functionId, _implementation);\n    }\n\n    function changeAdmin(address _admin) public isAdmin {\n        _setAdmin(_admin);\n    }\n\n    function admin() external isAdmin returns (address) {\n        return _getAdmin();\n    }\n\n    function implementation(bytes4 _functionId) external isAdmin returns (address) {\n        return _getImplementation(_functionId);\n    }\n\n    function deleteImplementation(bytes4 _functionId) public isAdmin{\n        delete StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value[_functionId];\n    }\n\n    //user Interface\n    fallback() external payable { \n        _fallback();\n    }\n\n    receive() external payable { \n        _fallback();\n    }\n\n    function _fallback() private  {\n        bytes4 functionId = _getFunctionId(msg.data);\n        address _implementation = _getImplementation(functionId);\n        if(_implementation == address(0)) revert Implementation_NotFound();\n        _delegate(_implementation);\n    }\n\n    function _getFunctionId(bytes memory data) private pure returns (bytes4) {\n        bytes4 functionId;\n        assembly {\n            functionId := mload(add(data, 32))\n        }\n        return functionId;\n    }\n\n    function _delegate(address _implementation) internal virtual {\n        assembly {\n            \n            calldatacopy(0, 0, calldatasize())\n\n            let result := delegatecall(gas(), _implementation, 0, calldatasize(), 0, 0)\n            returndatacopy(0, 0, returndatasize())\n\n            switch result\n            // delegatecall returns 0 on error.\n            case 0 {\n                revert(0, returndatasize())\n            }\n            default {\n                return(0, returndatasize())\n            }\n        }\n    }\n}"
+    },
+    "contracts/ProxyAdmin.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8;\n\nimport \"./Proxy.sol\";\n\ncontract ProxyAdmin {\n    error NOT_AUTHORIZED();\n\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    modifier onlyOwner() {\n        if(msg.sender != owner) revert NOT_AUTHORIZED();\n        _;\n    }\n\n    function getProxyAdmin(address proxy) external view returns (address) {\n        (bool ok, bytes memory res) = proxy.staticcall(abi.encodeCall(Proxy.admin, ()));\n        require(ok, \"call failed\");\n        return abi.decode(res, (address));\n    }\n\n    function changeProxyAdmin(address payable proxy, address admin) external onlyOwner {\n        Proxy(proxy).changeAdmin(admin);\n    }\n\n    function getProxyImplementation(address proxy, bytes4 functionId) external view returns (address) {\n       (bool ok, bytes memory res) = proxy.staticcall(\n            abi.encodeCall(Proxy.implementation, (functionId))\n        );\n        require(ok, \"call failed\");\n        return abi.decode(res, (address));\n    }\n\n    function upgradeImplementation(address payable proxy, address implementation, bytes4 functionId) external onlyOwner {\n        Proxy(proxy).upgradeTo(functionId, implementation);\n    }\n\n    function deleteImplementation(address payable proxy, bytes4 functionId) external onlyOwner {\n        Proxy(proxy).deleteImplementation(functionId);\n    }\n}"
+    },
+    "contracts/StorageSlot.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.20;\n\nlibrary StorageSlot {\n    struct AddressSlot {\n        mapping(bytes4 => address) value;\n    }\n\n    function getAddressSlot(\n        bytes32 slot\n    ) internal pure returns (AddressSlot storage r) {\n        assembly {\n            r.slot := slot\n        }\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 666666
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
