@@ -6,6 +6,9 @@ This repository contains a set of Ethereum smart contracts implementing a proxy 
 
 ## Contracts
 
+proxy -> https://sepolia.etherscan.io/address/0x25a913afafF2BE67258e19c27030D030EFCa0B1d
+proxyAdmin -> https://sepolia.etherscan.io/address/0x4C37157Dc252dAcF1c88941138362F573E338F87
+
 ### Proxy Contract (`Proxy.sol`)
 
 The `Proxy` contract serves as a proxy for other contracts, enabling seamless upgrades without changing the contract address. Key features include:
