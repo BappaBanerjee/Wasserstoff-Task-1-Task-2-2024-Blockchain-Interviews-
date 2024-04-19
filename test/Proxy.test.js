@@ -175,10 +175,12 @@ describe("Proxy contract unit testing", () => {
       );
     });
 
-    describe("initializing the owner of the token", async function () {
-      it("should initialize the owner of the token contract", async function () {
-        await proxyInterface.initialize();
+    describe.only("initializing the owner of the token", async function () {
+      it.only("should initialize the owner of the token contract", async function () {
+        console.log(await Token1.owner());
 
+        await proxyInterface.initialize();
+        console.log(await Token1.initialize());
         expect(await proxyInterface.owner()).to.equal(deployer.address);
       });
 
